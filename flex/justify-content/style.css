@@ -1,8 +1,27 @@
+/* Reseta margens e preenchimento */
 * {
     margin: 0px;
     padding: 0px;
 }
 
+/* Estiliza o cabeçalho */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: rgb(88, 88, 87);
+    color: rgb(255, 226, 187);
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.445);
+    height: 140px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+header h1 {
+    font-size: 40px;
+}
+
+/* Estiliza o menu hamburger */
 .menu-hamburger {
     font-size: 40px;
     cursor: pointer;
@@ -13,48 +32,59 @@
     color: rgb(204, 194, 176);
 }
 
-.cicle-search {
-    text-decoration: none;
-    color: blackc;
-}
-
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    background-color: rgb(88, 88, 87);
-    color: rgb(255, 226, 187);
-    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.445);
+/* Estiliza o container principal */
+.maintain {
     position: relative;
-    height: 140px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    right: 20px;
+    display: flex;
 }
 
-header h1 {
-    font-size: 40px;
-}
-
+/* Container do campo de pesquisa */
 .container-search {
     background-color: rgb(177, 162, 143);
     padding: 10px;
     border-radius: 50px;
-    width: 200px;
+    display: flex;
+    align-items: center;
+    transition: width 0.5s ease; /* Transição suave */
+    width: 40px; /* Largura inicial */
 }
 
+.container-search:hover {
+    width: 240px; /* Largura expandida */
+}
+
+/* Estiliza o campo de pesquisa */
 #text-search {
     background: none;
     outline: none;
     border: none;
-    -webkit-text-fill-color: white;
+    color: white;
+    font-size: 16px;
+    width: 0px; /* Largura inicial */
+    transition: width 0.5s ease; /* Transição suave */
+    opacity: 0; /* Inicialmente invisível */
+}
+
+.container-search:hover #text-search {
+    width: 200px; /* Largura do campo de pesquisa */
+    opacity: 1; /* Torna o campo visível */
+}
+
+/* Estiliza o link de pesquisa */
+.cicle-search {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px; /* Ajuste da largura */
+    height: 40px; /* Ajuste da altura */
+    background-color: white;
+    border-radius: 50%;
     transition: 0.5s;
 }
 
-.cicle-search {
-    background-color: white;
-    padding: 5px;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-
+.container-search:hover .cicle-search {
+    width: 40px; /* Mantém a largura do ícone */
 }
