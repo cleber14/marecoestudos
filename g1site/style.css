@@ -1,0 +1,102 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.containerProducts {
+    display: flex;
+    padding-top: 15px;
+}
+
+.products {
+    list-style-type: none;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 10px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 3px solid rgba(0, 0, 0, 0);
+    position: relative;
+}
+
+.products:hover {
+    border-bottom: 3px solid black;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: blue;
+}
+
+.assine {
+    list-style-type: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    border: 2px solid rgba(0, 0, 0, 0);
+    padding-right: 20px;
+}
+
+.assine:hover {
+    color: blue;
+}
+
+.register-container {
+    display: flex;
+    position: absolute;
+    
+    right: 5px;
+}
+
+.contaGlobo {
+    display: flex;
+}
+
+.contaGlobo:hover {
+    color: blue;
+    cursor: pointer;
+}
+
+header {
+    background-color: rgb(201, 37, 37);
+    position: relative;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+header > h1 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+    font-size: 50px;
+    position: relative;
+}
+
+.person-outline {
+    font-size: 20px;
+    padding-right: 10px;
+}
+
+.search-container{
+    background-color: rgb(163, 18, 18);
+    position: absolute;
+    top: 25%;
+    right: 2%;
+    padding: 20px;
+    width: 200px;
+    height: 1px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    -webkit-text-fill-color: white;
+    transition: 0.5s;
+}
+
+.search-container:hover {
+    background-color: white;
+    width: 250px;
+    -webkit-text-fill-color: black;
+}
