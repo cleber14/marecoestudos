@@ -1,39 +1,31 @@
-const apiKey = '3H9CGKYCGVZSOBBQ';
-const url = `https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=MSFT&interval=5min&apikey=${apiKey}`;
+let menuHamburger = document.querySelector(".menu-hamburger")
+let menuSection = document.querySelector(".menuSection");
 
-let tickerData = [];
+const closeSelection = document.querySelector(".close-cicle")
 
-async function fetchData() {
-    try {
-        const response = await fetch(url);
-        const data = await response.json();
-        updateTickerData(data);
-        displayData();
-    } catch (error) {
-        console.error('Erro ao buscar dados:', error);
-    }
-}
+const overlay = document.querySelector(".overlaySection")
 
-function updateTickerData(data) {
-    const timeSeries = data['Time Series (5min)'];
-    if (timeSeries) {
-        tickerData = []; // Limpa os dados anteriores
-        for (const [time, values] of Object.entries(timeSeries)) {
-            tickerData.push(`MSFT (${time}): $${values['1. open']}`);
-        }
-    }
-}
+let audioPim = document.querySelector(".audioPim");
 
-function displayData() {
-    const container = document.querySelector('.container-realtime-feed');
-    if (tickerData.length > 0) {
-        const tickerContent = tickerData.join(' | '); // Junta os dados com um separador
-        container.innerHTML = `<div class="ticker">${tickerContent}</div>`;
-    } else {
-        container.innerHTML = 'Sem dados disponíveis.';
-    }
-}
 
-setInterval(fetchData, 300000); // Atualiza os dados a cada 5 minutos
-fetchData(); // Busca os dados ao carregar a página
 
+menuHamburger.addEventListener("click", function(){
+    menuSection.style.display = "block";
+    overlay.style.display = "block"
+});
+
+closeSelection.addEventListener("click", function(){
+    menuSection.style.transition = "all 1s";
+    overlay.style.transition = "all 1s";
+    menuSection.style.display = "none";
+    overlay.style.display = "none";
+})
+
+overlay.addEventListener("click", function(){
+    menuSection.style.display = "none";
+    overlay.style.display = "none";
+});
+
+menuHamburger.addEventListener("click", function(){
+audioPim.currentTime = 0;
+audioPim.play()});
